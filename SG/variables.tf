@@ -1,5 +1,9 @@
-variable "sg_web_name" {
-  default = "DefaultSGWeb"
+variable "sg_manager_name" {
+  default = "ManagerSG"
+}
+
+variable "sg_worker_name" {
+  default = "WorkerSG"
 }
 
 variable "sg_web_description" {
@@ -10,10 +14,16 @@ variable "ext_cidr_block" {
   default = "0.0.0.0/0"
 }
 
-variable "ingress_ports" {
+variable "ingress_ports_manager" {
   type        = list(number)
   description = "List of ingress ports"
   default     = [22, 8080, 80]
+}
+
+variable "ingress_ports_worker" {
+  type        = list(number)
+  description = "List of ingress ports"
+  default     = [22]
 }
 
 variable "outbound_port" {

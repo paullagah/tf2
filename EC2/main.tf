@@ -1,4 +1,4 @@
-resource "aws_instance" "web" {
+resource "aws_instance" "manager" {
   ami                         = var.ami
   instance_type               = var.instance
   key_name                    = var.key
@@ -7,7 +7,7 @@ resource "aws_instance" "web" {
   vpc_security_group_ids      = [var.vpc_security_group_ids]
 
   tags = {
-    Name = "EC2_200820"
+    Name = var.name
   }
 
 }
