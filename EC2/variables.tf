@@ -21,3 +21,8 @@ variable "subnet_a" {
 variable "vpc_security_group_ids" {}
 
 variable "name" {}
+
+variable "user_data" {
+  description = "script to run when creating instance"
+  
+}

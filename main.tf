@@ -27,7 +27,6 @@ module "EC2_Worker" {
   name                   = "worker"
 }
 
-provider "docker" {
-  host = "tcp://module.EC2_Manager.id:2376"
-
+data "template_file" "init" {
+  template = "${file("${path.module}/scripts/setup.sh")}"
 }
